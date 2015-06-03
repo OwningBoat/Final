@@ -10,84 +10,67 @@ public class PlayerController : MonoBehaviour {
 	public KeyCode back;
 	public KeyCode left;
 	public KeyCode right;
+	public KeyCode interact;
+	bool talkAble;
 
 	//How fast the player will move.
 	public float playerSpeed;
-	float collisionSpeed;
-	float speed;
 
-	void Start(){
-		speed = playerSpeed;
-		collisionSpeed = (playerSpeed * -1);
-	}
-	
 	void Update () {
 
 		//How to move player!
 		Vector3 pos = transform.position;
-		if (Input.GetKey(fwd)) {
-			pos.z += speed;
+		if (Input.GetKey (fwd)) {
+			pos.z += playerSpeed * Time.deltaTime;
+			transform.position = pos;
+		} 
+		else if (Input.GetKey (back)) {
+			pos.z -= playerSpeed * Time.deltaTime;
+			transform.position = pos;
+		} 
+		else if (Input.GetKey (left)) {
+			pos.x -= playerSpeed * Time.deltaTime;
+			transform.position = pos;
+		} 
+		else if (Input.GetKey (right)) {
+			pos.x += playerSpeed * Time.deltaTime;
+			transform.position = pos;
+		} 
+		else if (Input.GetKeyDown (interact) && talkAble == true) {
+			Debug.Log ("Talking");
 		}
-		if (Input.GetKey(back)) {
-			pos.z -= speed;		
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag ("Dialogue")) {
+			Debug.Log ("ready to talk");
+			talkAble = true;
 		}
-		if (Input.GetKey(left)) {
-			pos.x -= speed;
-		}
-		if (Input.GetKey(right)) {
-			pos.x += speed;					
-		}
-		/*
-		if( target )
+		if (other.CompareTag("Environment"))
 		{
-			Vector3 dist = pos - target.localPosition;
-			if( dist.sqrMagnitude < 1 && Input.GetKey( left ) )
-			{
-				pos.x += 0.15f;
-				
+			Vector3 pos = transform.position;
+			if (Input.GetKey (fwd)) {
+				pos.z -= playerSpeed * Time.deltaTime;
 			}
-			
-			if( dist.sqrMagnitude < 1 && Input.GetKey( fwd ) )
-			{
-				pos.z -= 0.15f;
-				
+			if (Input.GetKey(back)) {
+				pos.z += playerSpeed * Time.deltaTime;		
 			}
-			
-			if( dist.sqrMagnitude < 1 && Input.GetKey( back ) )
-			{
-				pos.z += 0.15f;
-				
+			if (Input.GetKey(left)) {
+				pos.x += playerSpeed * Time.deltaTime;
 			}
-			
-			if( dist.sqrMagnitude < 1 && Input.GetKey( right ) )
-			{
-				pos.x -= 0.15f;
-				
+			if (Input.GetKey(right)) {
+				pos.x -= playerSpeed * Time.deltaTime;					
 			}
 		}
-		*/
-		//Move the playrer!
-		transform.position = pos;
 	}
 
-	public void OnCollisionEnter(Collision c){
-		Vector3 pos = transform.position;
-		if (Input.GetKey(fwd)) {
-			pos.z -= speed;
+	void OnTriggerExit(Collider other)
+	{
+		if (other.CompareTag ("Dialogue")) {
+			Debug.Log ("can not talk");
+			talkAble = false;
 		}
-		if (Input.GetKey(back)) {
-			pos.z += speed;		
-		}
-		if (Input.GetKey(left)) {
-			pos.x += speed;
-		}
-		if (Input.GetKey(right)) {
-			pos.x -= speed;					
-		}
-		transform.position = pos;
-
 	}
-//	public void OnCollisionExit(Collision c){
-//		speed = playerSpeed;
-//	}
+
 }
