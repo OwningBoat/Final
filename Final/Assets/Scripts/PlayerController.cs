@@ -11,66 +11,73 @@ public class PlayerController : MonoBehaviour {
 	public KeyCode left;
 	public KeyCode right;
 	public KeyCode interact;
-	bool talkAble;
+	bool talkAble1;
+	bool talkAble2;
 
 	//How fast the player will move.
 	public float playerSpeed;
+
+	//Reference to the collision stuff
+	private PlayerCollision collisions;
+
+	void Start() {
+		collisions = GetComponent<PlayerCollision>();
+	}
 
 	void Update () {
 
 		//How to move player!
 		Vector3 pos = transform.position;
-		if (Input.GetKey (fwd)) {
+		if (Input.GetKey (fwd) && !collisions.collisionUp) {
 			pos.z += playerSpeed * Time.deltaTime;
 			transform.position = pos;
 		} 
-		else if (Input.GetKey (back)) {
+		else if (Input.GetKey (back) && !collisions.collisionDown) {
 			pos.z -= playerSpeed * Time.deltaTime;
 			transform.position = pos;
 		} 
-		else if (Input.GetKey (left)) {
+		else if (Input.GetKey (left) && !collisions.collisionLeft) {
 			pos.x -= playerSpeed * Time.deltaTime;
 			transform.position = pos;
 		} 
-		else if (Input.GetKey (right)) {
+		else if (Input.GetKey (right) && !collisions.collisionRight) {
 			pos.x += playerSpeed * Time.deltaTime;
 			transform.position = pos;
 		} 
-		else if (Input.GetKeyDown (interact) && talkAble == true) {
-			Debug.Log ("Talking");
+		else if (Input.GetKeyDown (interact) && talkAble1 == true) {
+			Debug.Log ("piss");
+		}
+		else if (Input.GetKeyDown (interact) && talkAble2 == true) {
+			Debug.Log ("shit");
 		}
 	}
-
+	//Check if the player is in a Dialogue zone.
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag ("Dialogue")) {
-			Debug.Log ("ready to talk");
-			talkAble = true;
-		}
-		if (other.CompareTag("Environment"))
+		if (other.CompareTag ("Dialogue1")) //repeat for # of Dialogue boxes.
+			{
+				Debug.Log ("ready to talk 1");
+				talkAble1 = true;
+			}
+		if (other.CompareTag ("Dialogue2"))
 		{
-			Vector3 pos = transform.position;
-			if (Input.GetKey (fwd)) {
-				pos.z -= playerSpeed * Time.deltaTime;
-			}
-			if (Input.GetKey(back)) {
-				pos.z += playerSpeed * Time.deltaTime;		
-			}
-			if (Input.GetKey(left)) {
-				pos.x += playerSpeed * Time.deltaTime;
-			}
-			if (Input.GetKey(right)) {
-				pos.x -= playerSpeed * Time.deltaTime;					
-			}
+			Debug.Log ("Ready to talk 2");
+			talkAble2 = true;
 		}
-	}
 
+	}
+  //make the player unable to talk when they lave a Dialogue zone.
 	void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag ("Dialogue")) {
-			Debug.Log ("can not talk");
-			talkAble = false;
+		if (other.CompareTag ("Dialogue1")) //repeat for # of Dialogue boxes.
+		{
+			Debug.Log ("can not talk 1");
+			talkAble1 = false;
+		}
+		if (other.CompareTag ("Dialogue2")) //repeat for # of Dialogue boxes.
+		{
+			Debug.Log ("can not talk 2");
+			talkAble2 = false;
 		}
 	}
-
 }
