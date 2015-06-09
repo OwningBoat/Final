@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &103352595
 GameObject:
@@ -205,8 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -343,11 +344,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1508550650}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: 0}
-  m_AnchorMax: {x: .5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 112}
-  m_SizeDelta: {x: 1436, y: 639}
-  m_Pivot: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 639}
+  m_Pivot: {x: .5, y: 0}
 --- !u!114 &708766087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +474,7 @@ RectTransform:
   m_GameObject: {fileID: 875849095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.32432032, y: 1.87199998, z: 1}
+  m_LocalScale: {x: 3.5, y: 1.87199998, z: 1}
   m_Children:
   - {fileID: 609243702}
   - {fileID: 1968265521}
@@ -564,7 +565,7 @@ RectTransform:
   m_GameObject: {fileID: 995127830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.32223988, y: 1.87199998, z: 1}
+  m_LocalScale: {x: 3.25, y: 1.87199998, z: 1}
   m_Children: []
   m_Father: {fileID: 1508550650}
   m_RootOrder: 2
@@ -670,10 +671,10 @@ RectTransform:
   - {fileID: 1586954132}
   m_Father: {fileID: 294114063}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 304.5}
+  m_SizeDelta: {x: 1084, y: 609}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1586954131
 GameObject:
@@ -700,7 +701,7 @@ RectTransform:
   m_GameObject: {fileID: 1586954131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.9191041, y: 1.87199998, z: 1}
+  m_LocalScale: {x: 3.05999994, y: 1.87199998, z: 1}
   m_Children: []
   m_Father: {fileID: 1508550650}
   m_RootOrder: 3

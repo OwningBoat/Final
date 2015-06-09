@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CombatController : MonoBehaviour {
+public class CombatController : MonoBehaviour
+{
 	ArrayList combatantList = new ArrayList();
 
 	public GameObject combatant01;
@@ -11,7 +12,8 @@ public class CombatController : MonoBehaviour {
     bool turnPaused = false;
 
 
-	void Start () {
+	void Start ()
+    {
 		combatantList.Add (combatant01);
 		combatantList.Add (combatant02);
 		combatantList.Add (combatant03);
@@ -24,7 +26,8 @@ public class CombatController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (!turnPaused)
         {
             foreach (GameObject combatant in combatantList)
