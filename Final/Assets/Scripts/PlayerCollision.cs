@@ -81,13 +81,13 @@ public class PlayerCollision : MonoBehaviour
 			//UP UP UP UP UP UP UP UP 
 			if (rayPoints[i].gameObject.name == "up")
 			{
-				raysUp.Add (new Ray(rayPoints[i].gameObject.transform.position, rayPoints[i].gameObject.transform.forward));
+				raysUp.Add (new Ray(rayPoints[i].gameObject.transform.position, rayPoints[i].gameObject.transform.up));
 			}
 
 			//DOWN DOWN DOWN DOWN DOWN DOWN DOWN DOWN
 			if (rayPoints[i].gameObject.name == "down")
 			{
-				raysDown.Add (new Ray(rayPoints[i].gameObject.transform.position, -rayPoints[i].gameObject.transform.forward));
+				raysDown.Add (new Ray(rayPoints[i].gameObject.transform.position, -rayPoints[i].gameObject.transform.up));
 			}
 
 			//LEFT LEFT LEFT LEFT LEFT LEFT LEFT LEFT LEFT
@@ -110,7 +110,8 @@ public class PlayerCollision : MonoBehaviour
 	}
 
 	//INCASE I'M DUMB I'LL USE THIS DEBUG.
-	/*void drawRaycast()
+	/*
+	void drawRaycast()
 	{
 		//UPWARDS AND AWAYWARDS
 		foreach (Ray rUp in raysUp) {
@@ -128,7 +129,8 @@ public class PlayerCollision : MonoBehaviour
 		foreach (Ray rRight in raysRight) {
 			Debug.DrawRay(rRight.origin, rRight.direction * rayDistance, Color.red);
 		}
-	}*/
+	}
+	*/
 
 	bool checkCollision(List<Ray> rayList)
 	{
@@ -137,13 +139,13 @@ public class PlayerCollision : MonoBehaviour
 			//CHECK WHAT CONTACT IS, IS IT TRIGGER????
 			if (Physics.Raycast (rayList[i], out hit, rayDistance + 0.001f))
 			{
-				if (hit.transform.gameObject.tag == "Dialogue1" || hit.transform.gameObject.tag == "Dialogue2")
+				if (hit.transform.gameObject.tag == "Environment" ) //|| hit.transform.gameObject.tag == "Environment")
 				{
-					return false;
+					return true;
 				}
 				else
 				{
-				return true;
+				return false;
 				}
 			}
 			

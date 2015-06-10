@@ -26,6 +26,8 @@ public class GameplayManager : MonoBehaviour
     };
 
     GameState currentState = GameState.WorldMode;
+	
+	public Vector3 SpawnPosition { get; set; }
 
     void Awake()
     {
@@ -46,7 +48,7 @@ public class GameplayManager : MonoBehaviour
         switch(currentState)
         {
         case GameState.WorldMode:
-            Application.LoadLevel( "TestWorld" );
+            Application.LoadLevel( "Final" ); //TestWorld - set to Final temp to test spawn location.
             break;
         case GameState.TownMode:
             Application.LoadLevel( "TestTown" );

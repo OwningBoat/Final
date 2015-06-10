@@ -6,6 +6,10 @@ TagManager:
   - Environment
   - Dialogue1
   - Dialogue2
+  - North
+  - East
+  - South
+  - West
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
