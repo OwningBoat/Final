@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Combatant : MonoBehaviour 
 {
-
+    /*  // TODO: Fix variable assignments, otherwise script won't compile - AG 6/10/15
     public GameObject controllerObject;
     
     // Set the name that will appear in combat here. If void appears this wasn't set.
@@ -17,7 +17,7 @@ public class Combatant : MonoBehaviour
 
     bool acting = false;
 
-	public float combatantLevel= 1;
+	public float combatantLevel = 1;
 
 	// How often does the combatant attack. 
 	public float attackSpeed = 1;
@@ -56,7 +56,7 @@ public class Combatant : MonoBehaviour
         acting = true;
     }
 
-   void Update ()
+    void Update ()
     {
         if (acting && Input.GetKeyDown(KeyCode.Return))
         {
@@ -66,5 +66,5 @@ public class Combatant : MonoBehaviour
             controller.ResumeCombat();
         }
     }
-
+    */
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CombatController : MonoBehaviour
 {
+    /*  // TODO: Fix variable assignments, otherwise script won't compile - AG 6/10/15
 	ArrayList combatantList = new ArrayList();
 
 	public GameObject combatant01;
@@ -48,4 +49,5 @@ public class CombatController : MonoBehaviour
     {
         turnPaused = false;
     }
+     */
 }

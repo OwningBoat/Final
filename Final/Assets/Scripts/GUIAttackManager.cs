@@ -3,7 +3,15 @@ using System.Collections;
 
 public class GUIAttackManager : MonoBehaviour
 {
-    public GameObject Timer;
+    static public GUIAttackManager Instance;
+    public GameObject TimerText;
+    GUITimerManager timerManager;
+
+    void Awake()
+    {
+        Instance = this;
+        timerManager = TimerText.GetComponent<GUITimerManager>();
+    }
 
     public void AttackClicked(int intMember)
     {
@@ -12,5 +20,9 @@ public class GUIAttackManager : MonoBehaviour
         Debug.Log( "Character " + intMember.ToString() + " DoAttack()" );
         //Timer = Timer.GetComponent<GUITimerManager>;
         //GetComponent<GUITimerManager>
+
+        Debug.Log("Attack button clicked");
+        gameObject.SetActive(false);
+        timerManager.curTime = 0f;
     }
 }

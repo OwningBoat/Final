@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &58950423
 GameObject:
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9ecb6257ec3944393ffeea881f4d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FillBar: {fileID: 1563089132}
   AttackButton: {fileID: 274714248}
   curTime: 0
   maxTime: 100
@@ -248,7 +250,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 116924970}
-  - 114: {fileID: 116924971}
   m_Layer: 5
   m_Name: Group_AttackButtons
   m_TagString: Untagged
@@ -271,23 +272,11 @@ RectTransform:
   - {fileID: 274714249}
   m_Father: {fileID: 1508550650}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 335, y: 0}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: -263, y: 0}
   m_SizeDelta: {x: 170, y: 230}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &116924971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 116924969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86226eae51ae518478b2b5da70f70b41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Timer: {fileID: 0}
 --- !u!1 &121074477
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9ecb6257ec3944393ffeea881f4d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FillBar: {fileID: 1566895247}
   AttackButton: {fileID: 236981551}
   curTime: 0
   maxTime: 100
@@ -384,7 +374,7 @@ GameObject:
   - 114: {fileID: 236981556}
   m_Layer: 5
   m_Name: Button_Attack2
-  m_TagString: Untagged
+  m_TagString: GUIBattleAttackBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +436,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 116924971}
+      - m_Target: {fileID: 236981556}
         m_MethodName: AttackClicked
         m_Mode: 3
         m_Arguments:
@@ -473,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -498,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86226eae51ae518478b2b5da70f70b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: {fileID: 121074477}
+  TimerText: {fileID: 121074477}
 --- !u!1 &274714248
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +503,7 @@ GameObject:
   - 114: {fileID: 274714253}
   m_Layer: 5
   m_Name: Button_Attack3
-  m_TagString: Untagged
+  m_TagString: GUIBattleAttackBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +565,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 116924971}
+      - m_Target: {fileID: 274714253}
         m_MethodName: AttackClicked
         m_Mode: 3
         m_Arguments:
@@ -602,7 +592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -627,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86226eae51ae518478b2b5da70f70b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: {fileID: 58950423}
+  TimerText: {fileID: 58950423}
 --- !u!1 &285222793
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,8 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -802,7 +792,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -812,7 +802,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: fCurHealth / fMaxHealth
+  m_Text: fCurHealth / 100
 --- !u!222 &421923548
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -868,7 +858,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1164,12 +1154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .815686285, g: .815686285, b: 0, a: 1}
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 97cc535c796e24643a040c79ae8671fb, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1123841426
@@ -1290,7 +1280,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1374,12 +1364,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .815686285, g: .815686285, b: 0, a: 1}
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 97cc535c796e24643a040c79ae8671fb, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1563089133
@@ -1419,7 +1409,7 @@ GameObject:
   - 114: {fileID: 1565246668}
   m_Layer: 5
   m_Name: Button_Attack1
-  m_TagString: Untagged
+  m_TagString: GUIBattleAttackBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1481,7 +1471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 116924971}
+      - m_Target: {fileID: 1565246668}
         m_MethodName: AttackClicked
         m_Mode: 3
         m_Arguments:
@@ -1508,7 +1498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1533,7 +1523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86226eae51ae518478b2b5da70f70b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: {fileID: 1604897835}
+  TimerText: {fileID: 1604897835}
 --- !u!1 &1566895245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,12 +1571,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .815686285, g: .815686285, b: 0, a: 1}
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 97cc535c796e24643a040c79ae8671fb, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1566895248
@@ -1607,7 +1597,7 @@ GameObject:
   - 114: {fileID: 1597123362}
   m_Layer: 5
   m_Name: Text_Attack2
-  m_TagString: Untagged
+  m_TagString: GUIBattleAttackBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1739,6 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9ecb6257ec3944393ffeea881f4d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FillBar: {fileID: 1123841425}
   AttackButton: {fileID: 1565246663}
   curTime: 0
   maxTime: 100
@@ -1790,7 +1781,7 @@ GameObject:
   - 114: {fileID: 1720195046}
   m_Layer: 5
   m_Name: Text_Attack1
-  m_TagString: Untagged
+  m_TagString: GUIBattleAttackBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1856,7 +1847,7 @@ GameObject:
   - 114: {fileID: 1773588500}
   m_Layer: 5
   m_Name: Text_Attack3
-  m_TagString: Untagged
+  m_TagString: GUIBattleAttackBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1959,7 +1950,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1969,7 +1960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: fCurHealth / fMaxHealth
+  m_Text: fCurHealth / 100
 --- !u!222 &1857724247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2025,7 +2016,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2035,7 +2026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: fCurHealth / fMaxHealth
+  m_Text: fCurHealth / 100
 --- !u!222 &1900293607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2137,7 +2128,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
