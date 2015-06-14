@@ -3,21 +3,19 @@ using System.Collections;
 
 public class CombatController : MonoBehaviour
 {
-    /*  // TODO: Fix variable assignments, otherwise script won't compile - AG 6/10/15
-	ArrayList combatantList = new ArrayList();
+    // TODO: Fix variable assignments, otherwise script won't compile - AG 6/10/15
+	/*ArrayList combatantList = new ArrayList();
 
 	public GameObject combatant01;
 	public GameObject combatant02;
-	public GameObject combatant03;
-
+	public GameObject combatant03;*/
+    GameObject[] combatantList;
     bool turnPaused = false;
 
 
 	void Start ()
     {
-		combatantList.Add (combatant01);
-		combatantList.Add (combatant02);
-		combatantList.Add (combatant03);
+        combatantList = GameObject.FindGameObjectsWithTag("Combatant");
 
 		foreach (GameObject combatant in combatantList)
 		{
@@ -49,5 +47,5 @@ public class CombatController : MonoBehaviour
     {
         turnPaused = false;
     }
-     */
+    
 }

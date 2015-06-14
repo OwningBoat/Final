@@ -11,6 +11,8 @@ TagManager:
   - South
   - West
   - GUIBattleAttackBtn
+  - Combatant
+  - CombatController
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

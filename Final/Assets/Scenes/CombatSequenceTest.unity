@@ -88,7 +88,7 @@ GameObject:
   - 114: {fileID: 144601018}
   m_Layer: 0
   m_Name: Cube 2
-  m_TagString: Untagged
+  m_TagString: Combatant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,11 +104,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faac43d4117cf1e47ba27555929be7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerObject: {fileID: 1455661663}
-  characterName: void
-  timer: 700
-  controllable: 0
+  characterName: cube 2
+  enemy: 0
   timerProgress: 0
+  combatantLevel: 1
+  attackSpeed: 1
+  globalStatGrowth: 3
+  baseHP: 1
+  HPGrowth: 1
+  baseDefense: 1
+  defenseGrowth: 1
+  baseAttack: 1
+  attackGrowth: 1
+  experience: 0
+  timer: 650
 --- !u!23 &144601019
 Renderer:
   m_ObjectHideFlags: 0
@@ -155,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144601017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.08999991, y: 1.49000001, z: -8.96000004}
+  m_LocalPosition: {x: -2, y: 0, z: -8.96000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -190,11 +199,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faac43d4117cf1e47ba27555929be7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerObject: {fileID: 1455661663}
-  characterName: void
-  timer: 500
-  controllable: 0
+  characterName: cube 3
+  enemy: 0
   timerProgress: 0
+  combatantLevel: 1
+  attackSpeed: 1
+  globalStatGrowth: 3
+  baseHP: 1
+  HPGrowth: 1
+  baseDefense: 1
+  defenseGrowth: 1
+  baseAttack: 1
+  attackGrowth: 1
+  experience: 0
+  timer: 350
 --- !u!23 &295816745
 Renderer:
   m_ObjectHideFlags: 0
@@ -241,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 295816743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.08999991, y: 1.49000001, z: -5.73000002}
+  m_LocalPosition: {x: -2, y: 0, z: -5.73000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -271,8 +289,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 930148826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: .258890063, y: 0, z: 0, w: .965906799}
+  m_LocalPosition: {x: 0, y: 5.71000004, z: -18.0699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1455661665}
@@ -345,7 +363,7 @@ GameObject:
   - 114: {fileID: 1021530756}
   m_Layer: 0
   m_Name: Cube 1
-  m_TagString: Untagged
+  m_TagString: Combatant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -361,11 +379,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faac43d4117cf1e47ba27555929be7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerObject: {fileID: 1455661663}
-  characterName: void
-  timer: 300
-  controllable: 0
+  characterName: cube 1
+  enemy: 0
   timerProgress: 0
+  combatantLevel: 1
+  attackSpeed: 1
+  globalStatGrowth: 3
+  baseHP: 1
+  HPGrowth: 1
+  baseDefense: 1
+  defenseGrowth: 1
+  baseAttack: 1
+  attackGrowth: 1
+  experience: 0
+  timer: 500
 --- !u!23 &1021530757
 Renderer:
   m_ObjectHideFlags: 0
@@ -412,7 +439,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1021530755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.08999991, y: 1.49000001, z: -12.5699997}
+  m_LocalPosition: {x: -2, y: 0, z: -11.7799997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -428,7 +455,7 @@ GameObject:
   - 114: {fileID: 1455661664}
   m_Layer: 0
   m_Name: Combat Controller
-  m_TagString: Untagged
+  m_TagString: CombatController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,9 +471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095c36ec7af55704595832d7c4c9dead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatant01: {fileID: 1021530755}
-  combatant02: {fileID: 144601017}
-  combatant03: {fileID: 295816743}
 --- !u!4 &1455661665
 Transform:
   m_ObjectHideFlags: 0
@@ -459,3 +483,288 @@ Transform:
   m_Children: []
   m_Father: {fileID: 930148827}
   m_RootOrder: 0
+--- !u!1 &1523448421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1523448426}
+  - 33: {fileID: 1523448425}
+  - 65: {fileID: 1523448424}
+  - 23: {fileID: 1523448423}
+  - 114: {fileID: 1523448422}
+  m_Layer: 0
+  m_Name: Cube 6
+  m_TagString: Combatant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1523448422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523448421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faac43d4117cf1e47ba27555929be7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: cube 6
+  enemy: 1
+  timerProgress: 0
+  combatantLevel: 1
+  attackSpeed: 1
+  globalStatGrowth: 3
+  baseHP: 1
+  HPGrowth: 1
+  baseDefense: 1
+  defenseGrowth: 1
+  baseAttack: 1
+  attackGrowth: 1
+  experience: 0
+  timer: 400
+--- !u!23 &1523448423
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523448421}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1523448424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523448421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1523448425
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523448421}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1523448426
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523448421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -5.73000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+--- !u!1 &1798791392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1798791397}
+  - 33: {fileID: 1798791396}
+  - 65: {fileID: 1798791395}
+  - 23: {fileID: 1798791394}
+  - 114: {fileID: 1798791393}
+  m_Layer: 0
+  m_Name: Cube 4
+  m_TagString: Combatant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1798791393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798791392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faac43d4117cf1e47ba27555929be7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: cube 4
+  enemy: 1
+  timerProgress: 0
+  combatantLevel: 1
+  attackSpeed: 1
+  globalStatGrowth: 3
+  baseHP: 1
+  HPGrowth: 1
+  baseDefense: 1
+  defenseGrowth: 1
+  baseAttack: 1
+  attackGrowth: 1
+  experience: 0
+  timer: 600
+--- !u!23 &1798791394
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798791392}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &1798791395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798791392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1798791396
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798791392}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1798791397
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798791392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -11.7799997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!1 &2076472365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2076472370}
+  - 33: {fileID: 2076472369}
+  - 65: {fileID: 2076472368}
+  - 23: {fileID: 2076472367}
+  - 114: {fileID: 2076472366}
+  m_Layer: 0
+  m_Name: Cube 5
+  m_TagString: Combatant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2076472366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076472365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faac43d4117cf1e47ba27555929be7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: cube 5
+  enemy: 1
+  timerProgress: 0
+  combatantLevel: 1
+  attackSpeed: 1
+  globalStatGrowth: 3
+  baseHP: 1
+  HPGrowth: 1
+  baseDefense: 1
+  defenseGrowth: 1
+  baseAttack: 1
+  attackGrowth: 1
+  experience: 0
+  timer: 550
+--- !u!23 &2076472367
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076472365}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!65 &2076472368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076472365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &2076472369
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076472365}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2076472370
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076472365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -8.96000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
